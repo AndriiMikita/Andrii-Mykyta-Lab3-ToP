@@ -1,0 +1,36 @@
+﻿@model IEnumerable<(string, string)>
+
+@{
+    ViewData["Title"] = "Students in Clubs";
+    Layout = "_Layout";
+}
+
+<br/>
+<h4>Участь у гуртках</h4>
+
+
+<table class="table table-striped" style="margin-top: 15px">
+    <thead class="bg-info bg-opacity-10">
+    <tr>
+        <th>
+            Назва гуртка
+        </th>
+        <th>
+            Прізвище студента
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item2)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
